@@ -84,8 +84,7 @@
                     style="border-radius: 12% 88% 10% 90% / 78% 10% 90% 22% ">
             </div>
         </div>
-        <div class="text-center"><a href="/rolunk#referenciak" class="btn btn-primary mt-3 btn-more">További referenciak</a>
-        </div>
+        <div class="text-center"><a href="/rolunk#referenciak" class="btn btn-primary mt-3 btn-more">További referenciak</a></div>
     </div>
 </section>
 <span class="link_anchor_cont"><span id="kapcsolat" class="link_anchor"></span></span>
@@ -132,47 +131,7 @@
                 </div>
             </div>
             <div class="col-md">
-                <form id="contact_form">
-                    <div class="text-center">
-                        <h3 class="mb-4 mt-2 font-weight-bold">Kapcsolat felvétel <i class="fa-solid fa-envelope"></i>
-                        </h3>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="contact_last_name">Vezetéknév <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="contact_last_name" id="contact_last_name"
-                                required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="contact_first_name">Keresztnév <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="contact_first_name" id="contact_first_name"
-                                required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_email">E-mail cím <span class="text-danger">*</span></label>
-                        <input type="email" class="form-control" name="contact_email" id="contact_email"
-                            placeholder="pelda@szolgaltato.hu" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_company">Cég (Nem kötelező)</label>
-                        <input type="text" class="form-control" name="contact_company" id="contact_company">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_city">Város <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" name="contact_city" id="contact_city" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_subject">Tárgy <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" name="contact_subject" id="contact_subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_message">Üzenet <span class="text-danger">*</span></label>
-                        <textarea class="form-control" name="contact_message" id="contact_message" rows="5"
-                            style="min-height: 10rem;" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-more">Üzenet küldése</button>
-                </form>
+                {% include "components/contact.html" %}
             </div>
         </div>
     </div>

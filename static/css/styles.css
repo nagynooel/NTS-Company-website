@@ -356,17 +356,17 @@ section p {
 /* Section fade in */
 .to-fade-in {
     opacity: 0;
-    transform: translate(0,50%);
+    transform: translate(0,20%);
 }
 
 .to-fade-in.fade-in {
-    animation: fade-in 1s forwards;
+    animation: fade-in 0.5s forwards;
 }
 
 @keyframes fade-in {
     0% {
         opacity: 0;
-        transform: translate(0,50%);
+        transform: translate(0,20%);
     }
     
     100% {

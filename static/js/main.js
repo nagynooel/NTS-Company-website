@@ -94,7 +94,7 @@ function checkElementLocation() {
   
     $('section.to-fade-in').each(function(i) {
       var $that = $(this);
-      var trigger = $that.position().top + 100
+      var trigger = $that.position().top + 50
   
       //if element is in viewport, add the animate class
       if (bottom_of_window > trigger) {
