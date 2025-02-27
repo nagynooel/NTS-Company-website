@@ -31,7 +31,7 @@ def login():
 def logout():
     return False
 
-@app.route('/admin/dashboard')
+@app.route('/admin/iranyitopult')
 def profile():
     return render_template("admin.html")
 

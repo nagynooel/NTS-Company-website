@@ -517,3 +517,12 @@ ol.gradient-list>li:nth-child(10n + 10):before {
 ol.gradient-list>li+li {
     margin-top: 2rem;
 }
+
+/* - Login form */
+#login-form {
+    position: absolute;
+    width: 25rem;
+    top: 3rem;
+    left: 50%;
+    transform: translate(-50%,0);
+}
