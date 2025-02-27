@@ -1,0 +1,262 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: white;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 600px;
+    width: calc(100% - 40px);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#themeToggle {
+    position: fixed;
+    right: 0;
+    top: 7.5%;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    #themeToggle {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        top: 10%;
+        width: auto;
+    }
+}
+
+/* Sötét téma stílusok */
+body[data-theme="dark"] {
+    background-color: #2c2c2c;
+}
+
+body[data-theme="dark"] .container {
+    background-color: #383838;
+    box-shadow: 0 20px 20px rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] canvas {
+    border-color: #81C784;
+    background-color: #616161;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        url(asd.png);
+}
+
+body[data-theme="dark"] #scoreboardInside {
+    color: #81C784;
+    background: rgba(66, 66, 66, 0.5);
+}
+
+.game-area {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 80vh;
+    border: 2px solid #4CAF50;
+    background-color: #fff;
+    border-radius: 10px;
+    background-repeat: repeat, repeat, no-repeat;
+    background-position: 0 0, 0 0, center;
+    background-size: 20px 20px, 20px 20px, cover;
+}
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* A legfelső réteg */
+}
+
+#loadingCanvas {
+    width: 200px; /* Kígyó canvas szélessége */
+    height: 200px; /* Kígyó canvas magassága */
+}
+
+#scoreboardInside {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #45a049;
+    font-size: 18px;
+    z-index: 3; /* Biztosítjuk, hogy a pontszámok a legelöl legyenek */
+    background: rgba(255, 255, 255, 0.5);
+    padding: 8px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    opacity: 0.3;
+    pointer-events: none;
+    backdrop-filter: blur(0.5px);
+}
+
+#scoreboardInside p {
+    margin: 2px 0;
+    text-align: left;
+    opacity: 0.7;
+}
+
+#gameOverMessage {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: red;
+    font-family: fantasy;
+}
+
+button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+.snake-logo {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+@media (max-width: 768px) {
+    .snake-logo {
+        max-width: 200px;
+        width: 80%;
+    }
+}
+
+.game-bg-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 60%;
+    max-height: 60%;
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+body[data-theme="dark"] .game-bg-image {
+    opacity: 0.25;
+    filter: invert(100%);
+}
+
+@media (max-width: 500px) {
+    #scoreboardInside {
+        font-size: 9px;
+        padding: 4px;
+        transform-origin: top left;
+        transform: scale(1);
+    }
+    #scoreboardInside p {
+        margin: 1px 0;
+    }
+}
+
+/* Színkód legend */
+.color-legend {
+    margin-top: 20px;
+    font-size: 16px;
+    display: flex; /* Flexbox használata */
+    align-items: center; /* Középre igazítás */
+    justify-content: center; /* Középre igazítás */
+}
+
+.color-legend p {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Térköz a feliratok között */
+    color: #45a049;
+}
+
+.red-circle, .green-circle, .yellow-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 5px; /* Térköz a kör és a szöveg között */
+}
+
+.red-circle {
+    background-color: #FF5722; /* Piros */
+}
+
+.green-circle {
+    background-color: #4CAF50; /* Zöld */
+}
+
+.yellow-circle {
+    background-color: #FFD700; /* Sárga */
+}
+
+.NAV{
+    top: 2.5%;
+    position: fixed;
+    z-index: 9999;
+    width: 50%;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s;
+}

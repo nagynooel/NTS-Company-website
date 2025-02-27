@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Játék</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/game.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/game_background.png') }}" type="image/png">
+    <style>
+        canvas {
+            background-image: 
+            linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+            url({{ url_for('static', filename='img/game_background.png') }});
+        }
+    </style>
+</head>
+<body>
+    <div id="loadingScreen" class="loading-screen">
+        <canvas id="loadingCanvas"></canvas>
+    </div>
+    <button onclick="window.location.href='/'" class="NAV">Vissza a főoldalra</button>  <!-- Back to main page -->
+    <button id="themeToggle">🌓 Téma</button>
+    <div class="container" id="container">
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+            <div id="gameOverMessage" class="hidden">Game Over</div>
+            <button id="restartButton" class="hidden">Újra játék</button>    
+            <div id="scoreboardInside">
+                <p>Aktuális pontszám: <span id="currentScore">0</span></p>
+                <p>Legjobb pontszám: <span id="bestScore">0</span></p>
+                <p>Legutolsó pontszám: <span id="lastScore">0</span></p>
+            </div>
+        </div>
+        <div class="color-legend">
+            <p><span class="red-circle"></span> Alma</p>
+            <p><span class="green-circle"></span> Kígyó</p>
+            <p><span class="yellow-circle"></span> Speed Boost</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>

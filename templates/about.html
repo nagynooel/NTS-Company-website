@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+{% set active_page = 'about' %}
+
+{% block title %}Rólunk{% endblock %}
+
+{% block header %}
+{% with header_type='half' %}
+{% include "components/carousel.html" %}
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+<div class="header_overlap_cont">
+    <div class="counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="count-up">
+                        <p><span class="counter-count" data-value="30" data-duration="1000">0</span>+ év</p>
+                        <h3>Tapasztalat</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="count-up">
+                        <p><span class="counter-count" data-value="100" data-duration="1000">0</span>+</p>
+                        <h3>Sikeres projekt</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <h2 class="text-center mb-3">Rólunk</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <p>A NetworkTech Solutions (NTS) több mint 30 éve van jelen a hálózati infrastruktúrák kiépítése és
+                    weboldalak fejlesztése területén. Cégünk elkötelezett a legmodernebb technológiák alkalmazása
+                    mellett, hogy ügyfeleink számára megbízható és gyors hálózati megoldásokat biztosítsunk. Mottónk:
+                    "Hálózat mindenhol, mindenkinek!" – hiszünk abban, hogy bárhol, bármikor elérhetővé kell válnia a
+                    digitális világnak.</p>
+                <div class="counter">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="count-up">
+                                    <p><span class="counter-count" data-value="30" data-duration="1000">0</span>+ év</p>
+                                    <h3>Tapasztalat</h3>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6">
+                                <div class="count-up">
+                                    <p><span class="counter-count" data-value="100" data-duration="1000">0</span>+</p>
+                                    <h3>Sikeres projekt</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/rolunk" class="btn btn-info mt-3">Tudjon meg többet</a>
+            </div>
+            <div class="col-md">
+                <img src="{{ url_for('static', filename='carousel1.jpg') }}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

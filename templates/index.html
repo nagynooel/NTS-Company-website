@@ -1,0 +1,196 @@
+{% extends 'layout.html' %}
+{% set active_page = 'home' %}
+
+{% block title %}Kezdőlap{% endblock %}
+
+{% block header %}
+{% with header_type='full', custom_header_class='header_overlap' %}
+{% include "components/carousel.html" %}
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+<div class="header_overlap_cont">
+    <div class="counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="count-up">
+                        <p><span class="counter-count" data-value="30" data-duration="1000">0</span>+ év</p>
+                        <h3>Tapasztalat</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="count-up">
+                        <p><span class="counter-count" data-value="100" data-duration="1000">0</span>+</p>
+                        <h3>Sikeres projekt</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="to-fade-in">
+    <div class="container">
+        <h2 class="text-center mb-3">Miért válasszon minket?</h2>
+        <div class="row">
+            <div class="col-md">
+                <ol class="gradient-list">
+                    <li>Több mint 30 év tapasztalat</li>
+                    <li>Legmodernebb technológiák alkalmazása</li>
+                    <li>Kiemelkedő ügyfélszolgálat</li>
+                    <li>Személyre szabott megoldások</li>
+                </ol>
+            </div>
+            <div class="col-md">
+                <ol class="gradient-list" start="5">
+                    <li>Megbízhatóság és gyorsaság</li>
+                    <li>Rugalmasság és skálázhatóság</li>
+                    <li>Folyamatos innováció</li>
+                    <li>Környezettudatos megoldások</li>
+                </ol>
+            </div>
+        </div>
+        <div class="text-center"><a href="/rolunk" class="btn btn-primary btn-more">Tudjon meg többet</a></div>
+    </div>
+</section>
+<section class="to-fade-in">
+    <div class="container">
+        <h2 class="mb-3 text-center">Referenciák</h2>
+        <div class="row">
+            <div class="col-md">
+                <img src="{{ url_for('static', filename='img/references/rosszfogas.png') }}" alt=""
+                    style="border-radius: 8% 92% 23% 77% / 92% 19% 81% 8%">
+            </div>
+            <div class="col-md">
+                <p>A NTS több mint 100 sikeres projektet valósított meg az évek során, melyek során különböző
+                    iparágakban és szektorokban dolgoztunk. Ügyfeleink között megtalálhatók kis- és nagyvállalatok,
+                    valamint nemzetközi szervezetek, akik mind elégedettek voltak a személyre szabott hálózati
+                    megoldásainkkal és webfejlesztéseinkkel. Munkánk mindig a legmagasabb színvonalú, megbízható és
+                    biztonságos technológiai háttéren alapul.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <p>A NTS több mint 100 sikeres projektet valósított meg az évek során, melyek során különböző
+                    iparágakban és szektorokban dolgoztunk. Ügyfeleink között megtalálhatók kis- és nagyvállalatok,
+                    valamint nemzetközi szervezetek, akik mind elégedettek voltak a személyre szabott hálózati
+                    megoldásainkkal és webfejlesztéseinkkel. Munkánk mindig a legmagasabb színvonalú, megbízható és
+                    biztonságos technológiai háttéren alapul.</p>
+            </div>
+            <div class="col-md">
+                <img src="{{ url_for('static', filename='img/references/nts.png') }}" alt=""
+                    style="border-radius: 12% 88% 10% 90% / 78% 10% 90% 22% ">
+            </div>
+        </div>
+        <div class="text-center"><a href="/rolunk#referenciak" class="btn btn-primary mt-3 btn-more">További referenciak</a>
+        </div>
+    </div>
+</section>
+<span class="link_anchor_cont"><span id="kapcsolat" class="link_anchor"></span></span>
+<section class="to-fade-in">
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <p>Ha Ön is szeretné igénybe venni szolgáltatásainkat vagy kérdése van, ne habozzon! Kollégáink
+                    készséggel állnak rendelkezésére és segítenek a legjobb megoldások kiválasztásában. Lépjen velünk
+                    kapcsolatba a honlapunkon található elérhetőségek egyikén vagy a kapcsolati űrlapunkon.</p>
+                <b>Miben tudunk segíteni?</b>
+                <ol class="gradient-list">
+                    <li>Weboldalok tervezése és fejlesztése</li>
+                    <li>Teljes informatikai hálózat építése</li>
+                    <li>Hibaelhárítás</li>
+                    <li>Általános kérdések a céggel kapcsolatban</li>
+                    <li>Álláslehetőségek</li>
+                </ol>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-12 col-lg-6 mb-2">
+                            <div class="card p-2" style="width: 14rem; height: 100%;">
+                                <div class="card-body text-center">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <h5 class="card-title">Telefon</h5>
+                                    <a href="tel:+36301234567">
+                                        <h6 class="card-subtitle mb-2 text-muted">+36 30 123 4567</h6>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-12 col-lg-6 mb-2">
+                            <div class="card" style="width: 14rem; height: 100%;">
+                                <div class="card-body text-center">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                    <h5 class="card-title">Székhely</h5>
+                                    <a href="https://www.google.com/maps/place/Gy%C5%91ri+Szakk%C3%A9pz%C3%A9si+Centrum+Jedlik+%C3%81nyos+G%C3%A9pipari+%C3%A9s+Informatikai+Technikum+%C3%A9s+Koll%C3%A9gium/@47.6823661,17.627756,17z/data=!3m1!4b1!4m6!3m5!1s0x476bbffacc7d0121:0x3c21b0233aee52f!8m2!3d47.6823625!4d17.6303309!16s%2Fg%2F11b77gvgh9?entry=ttu&g_ep=EgoyMDI1MDIyNC4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank">
+                                        <h6 class="card-subtitle mb-2 text-muted">9021 Győr<br/>Szent István út 7</h6>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <form id="contact_form">
+                    <div class="text-center">
+                        <h3 class="mb-4 mt-2 font-weight-bold">Kapcsolat felvétel <i class="fa-solid fa-envelope"></i>
+                        </h3>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="contact_last_name">Vezetéknév <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="contact_last_name" id="contact_last_name"
+                                required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="contact_first_name">Keresztnév <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="contact_first_name" id="contact_first_name"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_email">E-mail cím <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" name="contact_email" id="contact_email"
+                            placeholder="pelda@szolgaltato.hu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_company">Cég (Nem kötelező)</label>
+                        <input type="text" class="form-control" name="contact_company" id="contact_company">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_city">Város <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="contact_city" id="contact_city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_subject">Tárgy <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="contact_subject" id="contact_subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_message">Üzenet <span class="text-danger">*</span></label>
+                        <textarea class="form-control" name="contact_message" id="contact_message" rows="5"
+                            style="min-height: 10rem;" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-more">Üzenet küldése</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="to-fade-in">
+    <div class="container">
+        <h2 class="">Játék</h2>
+        <div class="row">
+            <div class="col-md">
+                <p>Ne felejtsen el kikapcsolódni egy kicsit! Oldalunkon egy klasszikus Snake játékot talál, amelyet kifejezetten
+                    azért tettünk elérhetővé, hogy szórakoztató módon pihenhessen a munka közben. Próbálja ki, és élvezze a
+                    játékot, miközben egy kis szünetet tart!</p>
+                <a href="/jatek" class="btn btn-primary btn-more">Kikapcsolódás</a>
+            </div>
+            <div class="col-md">
+                <a href="/jatek"><img src="{{ url_for('static', filename='img/game.png') }}" alt=""></a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
